@@ -35,9 +35,8 @@ jobs:
         env:
           CODE_SIGNING_ALLOWED: NO
 
-      - name: Export .ipa
-        run: |
-          xcodebuild -exportArchive \
-            -archivePath build/iosApp.xcarchive \
-            -exportPath build/export \
-            -exportOptionsPlist iosApp/ExportOptions.plist
+      - name: Upload .app
+        uses: actions/upload-artifact@v4
+        with:
+          name: iosApp-app
+          path: build/iosApp.xcarchive/Products/Applications/iosApp.app
