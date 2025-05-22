@@ -23,12 +23,11 @@ jobs:
       - name: Archive the iOS app
         run: |
           xcodebuild clean archive \
-            -workspace iosApp/iosApp.xcworkspace \
+            -project iosApp/iosApp.xcodeproj \
             -scheme iosApp \
             -archivePath build/iosApp.xcarchive \
             -sdk iphoneos \
             -configuration Release
-
         env:
           CODE_SIGNING_ALLOWED: NO
 
