@@ -1,17 +1,13 @@
 name: Build iOS app
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
+  workflow_dispatch:
 
 jobs:
   test:
     name: Build
     runs-on: macOS-latest
-    # Only run build in template repo
-    if: github.event.repository.name == 'KMP-App-Template' && github.repository_owner == 'Kotlin'
+
     steps:
       - name: Check out code
         uses: actions/checkout@v4
