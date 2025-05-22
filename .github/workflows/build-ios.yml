@@ -27,7 +27,11 @@ jobs:
             -scheme iosApp \
             -archivePath build/iosApp.xcarchive \
             -sdk iphoneos \
-            -configuration Release
+             -configuration Release \
+              CODE_SIGNING_ALLOWED=NO \
+              CODE_SIGN_IDENTITY="" \
+              PROVISIONING_PROFILE_SPECIFIER="" \
+              DEVELOPMENT_TEAM=""
         env:
           CODE_SIGNING_ALLOWED: NO
 
